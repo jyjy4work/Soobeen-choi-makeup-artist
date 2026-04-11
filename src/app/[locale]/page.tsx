@@ -1,12 +1,14 @@
 // Plan SC: 포트폴리오 미리보기 + 서비스 CTA + WhatsApp 문의 연결
 import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
+import Image from 'next/image'
 import { client } from '@/lib/sanity/client'
 import {
   featuredPortfolioQuery,
   servicesPreviewQuery,
   siteSettingsQuery,
 } from '@/lib/sanity/queries'
+import { urlFor } from '@/lib/sanity/image'
 import ContactButtons from '@/components/contact/ContactButtons'
 
 type Props = { params: { locale: string } }
@@ -53,12 +55,22 @@ export default async function HomePage({ params: { locale } }: Props) {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 mt-10">
             {featured.map((item: any) => (
-              <div key={item._id} className="aspect-square bg-brand-100 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-brand-100 to-brand-200 flex items-center justify-center">
-                  <span className="text-brand-400 text-xs tracking-wider uppercase">
-                    {item.category}
-                  </span>
-                </div>
+              <div key={item._id} className="aspect-square bg-brand-100 overflow-hidden relative">
+                {item.image?.asset ? (
+                  <Image
+                    src={urlFor(item.image).width(600).height(600).fit('crop').url()}
+                    alt={item.title ?? item.category ?? ''}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-brand-100 to-brand-200 flex items-center justify-center">
+                    <span className="text-brand-400 text-xs tracking-wider uppercase">
+                      {item.category}
+                    </span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
