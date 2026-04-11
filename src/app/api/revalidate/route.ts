@@ -18,6 +18,7 @@ export async function POST(request: NextRequest) {
     revalidatePath(`/${locale}/portfolio`)
     revalidatePath(`/${locale}/services`)
     revalidatePath(`/${locale}/about`)
+    revalidatePath(`/${locale}/contact`)
   }
 
   return NextResponse.json({ revalidated: true, timestamp: Date.now() })

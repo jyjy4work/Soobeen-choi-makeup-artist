@@ -58,7 +58,7 @@ export default async function AboutPage({ params: { locale } }: Props) {
           {artist.awards && artist.awards.length > 0 && (
             <div className="border-t border-brand-100 pt-16">
               <h3 className="text-xs tracking-[0.4em] text-brand-400 uppercase mb-10 text-center">
-                Career
+                {t('career')}
               </h3>
               <div className="space-y-4 max-w-xl mx-auto">
                 {artist.awards.map((award: any, i: number) => (
