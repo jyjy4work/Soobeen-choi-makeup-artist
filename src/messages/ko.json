@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "portfolio": "포트폴리오",
+    "services": "서비스 & 가격",
+    "about": "소개",
+    "contact": "문의"
+  },
+  "hero": {
+    "cta": "포트폴리오 보기",
+    "scroll": "스크롤"
+  },
+  "home": {
+    "portfolio_section": "포트폴리오",
+    "portfolio_more": "전체 포트폴리오 보기",
+    "services_section": "서비스",
+    "services_more": "전체 서비스 보기",
+    "contact_section": "예약 문의"
+  },
+  "portfolio": {
+    "title": "포트폴리오",
+    "filter_all": "전체",
+    "category_wedding": "웨딩",
+    "category_editorial": "화보",
+    "category_stage": "무대/공연",
+    "category_natural": "일상/내추럴"
+  },
+  "services": {
+    "title": "서비스 & 가격",
+    "price_label": "시작가",
+    "duration_label": "소요 시간",
+    "contact_cta": "예약하기"
+  },
+  "about": {
+    "title": "아티스트 소개"
+  },
+  "contact": {
+    "title": "예약 문의",
+    "subtitle": "메이크업 프로젝트에 대해 상담해 드립니다.",
+    "whatsapp": "WhatsApp으로 문의",
+    "email": "이메일 보내기",
+    "instagram": "인스타그램",
+    "youtube": "유튜브"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  },
+  "language": {
+    "fr": "Français",
+    "en": "English",
+    "ko": "한국어",
+    "zh": "中文"
+  }
+}

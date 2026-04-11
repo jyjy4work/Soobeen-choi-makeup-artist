@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "portfolio": "Portfolio",
+    "services": "Services & Pricing",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "cta": "View Portfolio",
+    "scroll": "Scroll"
+  },
+  "home": {
+    "portfolio_section": "Portfolio",
+    "portfolio_more": "View full portfolio",
+    "services_section": "Services",
+    "services_more": "View all services",
+    "contact_section": "Book an Appointment"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "filter_all": "All",
+    "category_wedding": "Wedding",
+    "category_editorial": "Editorial",
+    "category_stage": "Stage",
+    "category_natural": "Natural"
+  },
+  "services": {
+    "title": "Services & Pricing",
+    "price_label": "Starting from",
+    "duration_label": "Duration",
+    "contact_cta": "Book Now"
+  },
+  "about": {
+    "title": "About"
+  },
+  "contact": {
+    "title": "Book an Appointment",
+    "subtitle": "Get in touch to discuss your makeup project.",
+    "whatsapp": "Contact on WhatsApp",
+    "email": "Send an Email",
+    "instagram": "Instagram",
+    "youtube": "YouTube"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  },
+  "language": {
+    "fr": "Français",
+    "en": "English",
+    "ko": "한국어",
+    "zh": "中文"
+  }
+}

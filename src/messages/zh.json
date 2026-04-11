@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "portfolio": "作品集",
+    "services": "服务与价格",
+    "about": "关于我",
+    "contact": "联系我"
+  },
+  "hero": {
+    "cta": "查看作品集",
+    "scroll": "滚动"
+  },
+  "home": {
+    "portfolio_section": "作品集",
+    "portfolio_more": "查看全部作品",
+    "services_section": "服务",
+    "services_more": "查看所有服务",
+    "contact_section": "预约咨询"
+  },
+  "portfolio": {
+    "title": "作品集",
+    "filter_all": "全部",
+    "category_wedding": "婚礼",
+    "category_editorial": "时尚大片",
+    "category_stage": "舞台",
+    "category_natural": "日常"
+  },
+  "services": {
+    "title": "服务与价格",
+    "price_label": "起价",
+    "duration_label": "时长",
+    "contact_cta": "立即预约"
+  },
+  "about": {
+    "title": "关于我"
+  },
+  "contact": {
+    "title": "预约咨询",
+    "subtitle": "请联系我，讨论您的化妆项目。",
+    "whatsapp": "通过WhatsApp联系",
+    "email": "发送邮件",
+    "instagram": "Instagram",
+    "youtube": "YouTube"
+  },
+  "footer": {
+    "rights": "版权所有"
+  },
+  "language": {
+    "fr": "Français",
+    "en": "English",
+    "ko": "한국어",
+    "zh": "中文"
+  }
+}

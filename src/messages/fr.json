@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "portfolio": "Portfolio",
+    "services": "Services & Tarifs",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "hero": {
+    "cta": "Voir le Portfolio",
+    "scroll": "Défiler"
+  },
+  "home": {
+    "portfolio_section": "Portfolio",
+    "portfolio_more": "Voir tout le portfolio",
+    "services_section": "Services",
+    "services_more": "Voir tous les services",
+    "contact_section": "Prendre rendez-vous"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "filter_all": "Tout",
+    "category_wedding": "Mariage",
+    "category_editorial": "Éditorial",
+    "category_stage": "Scène",
+    "category_natural": "Naturel"
+  },
+  "services": {
+    "title": "Services & Tarifs",
+    "price_label": "À partir de",
+    "duration_label": "Durée",
+    "contact_cta": "Réserver"
+  },
+  "about": {
+    "title": "À propos"
+  },
+  "contact": {
+    "title": "Prendre rendez-vous",
+    "subtitle": "Contactez-moi pour discuter de votre projet maquillage.",
+    "whatsapp": "Contacter sur WhatsApp",
+    "email": "Envoyer un email",
+    "instagram": "Instagram",
+    "youtube": "YouTube"
+  },
+  "footer": {
+    "rights": "Tous droits réservés"
+  },
+  "language": {
+    "fr": "Français",
+    "en": "English",
+    "ko": "한국어",
+    "zh": "中文"
+  }
+}
