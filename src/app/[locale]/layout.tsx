@@ -1,5 +1,5 @@
-// Design Ref: §6.4 — hreflang 메타데이터, lang 속성 처리
 import type { Metadata } from 'next'
+import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
@@ -8,6 +8,21 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { client } from '@/lib/sanity/client'
 import { siteSettingsQuery } from '@/lib/sanity/queries'
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400'],
+  variable: '--font-sans',
+  display: 'swap',
+})
 
 type Props = {
   children: React.ReactNode
@@ -61,14 +76,13 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const messages = await getMessages()
 
-  // Sanity 미설정 시 null 반환 (graceful fallback)
   const settings = await client
     .fetch(siteSettingsQuery, { locale })
     .catch(() => null)
 
   return (
-    <html lang={locale}>
-      <body className="bg-white text-brand-900">
+    <html lang={locale} className={`${cormorant.variable} ${dmSans.variable}`}>
+      <body className="bg-brand-800 text-brand-50 font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main>{children}</main>

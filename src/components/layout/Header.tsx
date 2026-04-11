@@ -1,7 +1,6 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
-import { useLocale } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
 import { useState } from 'react'
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher'
@@ -19,61 +18,61 @@ export default function Header() {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-brand-100">
-      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* 로고 */}
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-brand-500 bg-brand-800/90 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto px-6 md:px-14 h-14 flex items-center justify-between">
+
+        {/* Logo */}
         <Link
           href={`/${locale}`}
-          className="text-sm font-light tracking-[0.3em] text-brand-800 hover:text-brand-600 transition-colors uppercase"
+          className="font-display font-light text-base tracking-[0.25em] text-brand-50
+            hover:text-brand-100 transition-colors uppercase"
         >
           Makeup Artist
         </Link>
 
-        {/* 데스크톱 네비게이션 */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-xs tracking-widest text-brand-600 hover:text-brand-900 transition-colors uppercase"
+              className="text-[10px] tracking-[0.35em] text-brand-200 hover:text-brand-50 transition-colors uppercase"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        {/* 우측: 언어 선택 + 모바일 메뉴 버튼 */}
-        <div className="flex items-center gap-2">
+        {/* Right: lang + hamburger */}
+        <div className="flex items-center gap-1">
           <LanguageSwitcher />
-
-          {/* 모바일 햄버거 */}
           <button
-            className="md:hidden p-2 text-brand-700"
+            className="md:hidden p-2 text-brand-200 hover:text-brand-50 transition-colors"
             onClick={() => setMenuOpen((o) => !o)}
             aria-label="Toggle menu"
           >
             {menuOpen ? (
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
         </div>
       </div>
 
-      {/* 모바일 메뉴 */}
+      {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-brand-100 px-4 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-brand-800 border-t border-brand-500 px-6 py-5 flex flex-col gap-5">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-sm tracking-widest text-brand-700 hover:text-brand-900 uppercase"
+              className="text-[10px] tracking-[0.35em] text-brand-200 hover:text-brand-50 uppercase transition-colors py-1"
             >
               {link.label}
             </Link>

@@ -21,15 +21,15 @@ export default function CategoryFilter({ selected, onChange }: Props) {
   }
 
   return (
-    <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+    <div className="flex flex-wrap justify-center gap-2 md:gap-3">
       {CATEGORIES.map((cat) => (
         <button
           key={cat}
           onClick={() => onChange(cat)}
-          className={`px-4 py-1.5 text-xs tracking-[0.2em] uppercase transition-colors border ${
+          className={`px-5 py-2 text-[9px] tracking-[0.3em] uppercase transition-all duration-200 border ${
             selected === cat
-              ? 'border-brand-700 bg-brand-700 text-white'
-              : 'border-brand-300 text-brand-500 hover:border-brand-500 hover:text-brand-700'
+              ? 'border-brand-50 bg-brand-50 text-brand-800'
+              : 'border-brand-400 text-brand-300 hover:border-brand-50 hover:text-brand-50'
           }`}
         >
           {labels[cat]}

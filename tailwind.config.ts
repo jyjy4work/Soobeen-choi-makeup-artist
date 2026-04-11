@@ -9,21 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-sans)'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
       },
       colors: {
-        // 메이크업 아티스트 브랜드 컬러 (추후 아티스트와 협의하여 변경)
         brand: {
-          50:  '#fdf8f6',
-          100: '#f2e8e5',
-          200: '#eaddd7',
-          300: '#e0cec7',
-          400: '#d2bab0',
-          500: '#bfa094',
-          600: '#a18072',
-          700: '#977669',
-          800: '#65524d',
-          900: '#271d1a',
+          50:  '#f0ebe3',   // warm ivory — primary text
+          100: '#c9a878',   // champagne gold — accent
+          200: '#b0a294',   // warm secondary text
+          300: '#736860',   // muted text
+          400: '#3d3530',   // visible border
+          500: '#262019',   // subtle border / card-2
+          600: '#1c1714',   // card background
+          700: '#141110',   // surface
+          800: '#0e0b09',   // page background
+          900: '#080503',   // deepest
         },
       },
     },
