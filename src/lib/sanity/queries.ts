@@ -2,24 +2,26 @@
 // 패턴: fieldName[_key == $locale][0].value
 import { groq } from 'next-sanity'
 
-// 홈 화면 featured 포트폴리오 (최대 6개)
+// 홈 화면 featured 포트폴리오 (최대 6개) — order asc, 동일 order면 최신순
 export const featuredPortfolioQuery = groq`
-  *[_type == "portfolio" && featured == true] | order(date desc)[0...6] {
+  *[_type == "portfolio" && featured == true] | order(order asc, date desc)[0...6] {
     _id,
     "title": title[_key == $locale][0].value,
     category,
     date,
+    order,
     image { asset->, hotspot, crop }
   }
 `
 
-// 포트폴리오 전체 목록
+// 포트폴리오 전체 목록 — order asc, 동일 order면 최신순
 export const portfolioQuery = groq`
-  *[_type == "portfolio"] | order(date desc) {
+  *[_type == "portfolio"] | order(order asc, date desc) {
     _id,
     "title": title[_key == $locale][0].value,
     category,
     date,
+    order,
     image { asset->, hotspot, crop }
   }
 `

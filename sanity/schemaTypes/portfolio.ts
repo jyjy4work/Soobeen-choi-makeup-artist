@@ -49,8 +49,20 @@ export const portfolio = defineType({
       type: 'boolean',
       initialValue: false,
     }),
+    defineField({
+      name: 'order',
+      title: '표시 순서',
+      description: '숫자가 작을수록 앞에 표시됩니다. (1, 2, 3 ...)',
+      type: 'number',
+      initialValue: 99,
+    }),
   ],
   orderings: [
+    {
+      title: '표시 순서',
+      name: 'orderAsc',
+      by: [{ field: 'order', direction: 'asc' }],
+    },
     {
       title: '최신순',
       name: 'dateDesc',
