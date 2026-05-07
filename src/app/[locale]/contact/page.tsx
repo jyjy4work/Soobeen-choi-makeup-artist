@@ -37,7 +37,7 @@ export default async function ContactPage({ params: { locale } }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 px-10 py-4
-              bg-[#25D366] text-white text-[10px] tracking-[0.35em]
+              bg-[#25D366] text-white text-[11px] tracking-[0.35em] font-sans font-medium
               hover:bg-[#20bc5a] transition-colors uppercase"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -53,7 +53,7 @@ export default async function ContactPage({ params: { locale } }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 px-10 py-4
-              border border-brand-100 text-brand-50 text-[10px] tracking-[0.35em]
+              border border-brand-100 text-brand-50 text-[11px] tracking-[0.35em] font-sans font-medium
               hover:bg-brand-100 hover:text-brand-800 transition-all uppercase"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
