@@ -27,17 +27,23 @@ export default async function HomePage({ params: { locale } }: Props) {
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-screen bg-brand-800 flex items-center overflow-hidden">
 
-        {/* Hero background image */}
-        {settings?.heroImage?.asset && (
-          <Image
-            src={urlFor(settings.heroImage).width(1920).height(1080).fit('crop').url()}
-            alt=""
-            fill
-            priority
-            className="object-cover opacity-30"
-            sizes="100vw"
-          />
-        )}
+        {/* Hero background image — Sanity hotspot 좌표를 object-position에 적용 */}
+        {settings?.heroImage?.asset && (() => {
+          const hotspot = settings.heroImage.hotspot
+          const x = hotspot ? Math.round(hotspot.x * 100) : 50
+          const y = hotspot ? Math.round(hotspot.y * 100) : 50
+          return (
+            <Image
+              src={urlFor(settings.heroImage).width(1920).url()}
+              alt=""
+              fill
+              priority
+              className="opacity-30"
+              style={{ objectFit: 'cover', objectPosition: `${x}% ${y}%` }}
+              sizes="100vw"
+            />
+          )
+        })()}
 
         {/* Vertical decorative text — desktop only */}
         <div className="absolute right-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-4">
