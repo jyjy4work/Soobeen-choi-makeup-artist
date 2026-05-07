@@ -12,7 +12,7 @@ export default function Header() {
 
   const navLinks = [
     { href: `/${locale}/portfolio`, label: t('portfolio') },
-    { href: `/${locale}/services`, label: t('services') },
+    // { href: `/${locale}/services`, label: t('services') }, // 비활성화 — 콘텐츠 준비 후 주석 해제
     { href: `/${locale}/about`, label: t('about') },
     { href: `/${locale}/contact`, label: t('contact') },
   ]

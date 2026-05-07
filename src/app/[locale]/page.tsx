@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { client } from '@/lib/sanity/client'
 import {
   featuredPortfolioQuery,
-  servicesPreviewQuery,
+  // servicesPreviewQuery, // 비활성화
   siteSettingsQuery,
 } from '@/lib/sanity/queries'
 import { urlFor } from '@/lib/sanity/image'
@@ -18,9 +18,8 @@ type Props = { params: { locale: string } }
 export default async function HomePage({ params: { locale } }: Props) {
   const t = await getTranslations({ locale })
 
-  const [featured, services, settings] = await Promise.all([
+  const [featured, settings] = await Promise.all([
     client.fetch(featuredPortfolioQuery, { locale }).catch(() => []),
-    client.fetch(servicesPreviewQuery, { locale }).catch(() => []),
     client.fetch(siteSettingsQuery, { locale }).catch(() => null),
   ])
 
@@ -177,48 +176,11 @@ export default async function HomePage({ params: { locale } }: Props) {
         </section>
       )}
 
-      {/* ─── SERVICES PREVIEW ─────────────────────────────── */}
+      {/* ─── SERVICES PREVIEW ─── 비활성화 (콘텐츠 준비 후 복구)
       {services.length > 0 && (
-        <section className="py-24 bg-brand-700 px-6 md:px-14">
-          <RevealSection className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-4 mb-12">
-              <div className="w-8 h-px bg-brand-100" />
-              <h2 className="text-[10px] tracking-[0.5em] text-brand-100 uppercase">
-                {t('home.services_section')}
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {services.map((s: any) => (
-                <div
-                  key={s._id}
-                  className="border border-brand-500 p-8 hover:border-brand-100 transition-colors group"
-                >
-                  <h3 className="text-[9px] tracking-[0.35em] text-brand-200 uppercase mb-5
-                    group-hover:text-brand-100 transition-colors">
-                    {s.name ?? '—'}
-                  </h3>
-                  <p className="font-display font-light text-4xl text-brand-50">€{s.price}</p>
-                  {s.duration && (
-                    <p className="text-brand-300 text-[9px] mt-2 tracking-wider uppercase">{s.duration}</p>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 flex items-center gap-4">
-              <div className="w-8 h-px bg-brand-500" />
-              <Link
-                href={`/${locale}/services`}
-                className="text-[9px] tracking-[0.3em] text-brand-300 hover:text-brand-100
-                  border-b border-brand-400 hover:border-brand-100 pb-0.5 uppercase transition-colors"
-              >
-                {t('home.services_more')}
-              </Link>
-            </div>
-          </RevealSection>
-        </section>
+        ...
       )}
+      ─────────────────────────────────────────────────── */}
 
       {/* ─── CONTACT CTA ──────────────────────────────────── */}
       <section className="py-32 px-6 text-center">
