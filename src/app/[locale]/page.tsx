@@ -58,11 +58,6 @@ export default async function HomePage({ params: { locale } }: Props) {
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-14 pt-28 pb-24">
 
-          {/* Overline */}
-          <p className="text-brand-100 text-[10px] tracking-[0.6em] uppercase mb-10 animate-fade-in-up">
-            &#8212;&nbsp;Makeup Artist&nbsp;&#8212;
-          </p>
-
           {/* Display headline */}
           <div className="mb-10">
             <h1 className="font-display font-light leading-[0.88] tracking-[-0.01em] text-brand-50
