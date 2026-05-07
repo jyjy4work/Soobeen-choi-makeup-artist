@@ -1,3 +1,5 @@
+export const revalidate = 60
+
 import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 import Image from 'next/image'

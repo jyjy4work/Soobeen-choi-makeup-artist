@@ -1,3 +1,5 @@
+export const revalidate = 60
+
 import { getTranslations } from 'next-intl/server'
 import { client } from '@/lib/sanity/client'
 import { siteSettingsQuery } from '@/lib/sanity/queries'
