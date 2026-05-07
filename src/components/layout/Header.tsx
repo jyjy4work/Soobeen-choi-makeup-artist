@@ -36,7 +36,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[10px] tracking-[0.35em] text-brand-200 hover:text-brand-50 transition-colors uppercase"
+              className="text-sm tracking-[0.35em] text-brand-200 hover:text-brand-50 transition-colors uppercase"
             >
               {link.label}
             </Link>
@@ -74,7 +74,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-[10px] tracking-[0.35em] text-brand-200 hover:text-brand-50 uppercase transition-colors py-1"
+              className="text-sm tracking-[0.35em] text-brand-200 hover:text-brand-50 uppercase transition-colors py-1"
             >
               {link.label}
             </Link>
