@@ -11,7 +11,7 @@ import { siteSettingsQuery } from '@/lib/sanity/queries'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['300', '400'],
+  weight: ['300', '400', '500', '600'],
   style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
@@ -82,7 +82,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} className={`${cormorant.variable} ${dmSans.variable}`}>
-      <body className="bg-brand-800 text-brand-50 font-sans antialiased">
+      <body className="bg-brand-800 text-brand-50 font-display antialiased">
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main>{children}</main>
