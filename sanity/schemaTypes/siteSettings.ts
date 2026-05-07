@@ -15,6 +15,13 @@ export const siteSettings = defineType({
       type: 'internationalizedArrayString',
     }),
     defineField({
+      name: 'heroImage',
+      title: '히어로 배경 이미지',
+      description: '홈페이지 메인 화면 배경 사진 (세로형 또는 가로형 모두 가능)',
+      type: 'image',
+      options: { hotspot: true },
+    }),
+    defineField({
       name: 'instagramUrl',
       title: 'Instagram URL',
       description: '예: https://www.instagram.com/yourname',

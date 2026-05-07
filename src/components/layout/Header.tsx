@@ -64,9 +64,11 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-brand-800 border-t border-brand-500 px-6 py-5 flex flex-col gap-5">
+      {/* Mobile menu — slide down */}
+      <div className={`md:hidden bg-brand-800 border-t border-brand-500 px-6
+        overflow-hidden transition-all duration-300 ease-in-out
+        ${menuOpen ? 'max-h-64 py-5 opacity-100' : 'max-h-0 py-0 opacity-0'}`}>
+        <div className="flex flex-col gap-5">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -78,7 +80,7 @@ export default function Header() {
             </Link>
           ))}
         </div>
-      )}
+      </div>
     </header>
   )
 }

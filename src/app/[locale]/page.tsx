@@ -9,6 +9,7 @@ import {
 } from '@/lib/sanity/queries'
 import { urlFor } from '@/lib/sanity/image'
 import ContactButtons from '@/components/contact/ContactButtons'
+import RevealSection from '@/components/ui/RevealSection'
 
 type Props = { params: { locale: string } }
 
@@ -25,6 +26,18 @@ export default async function HomePage({ params: { locale } }: Props) {
     <>
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-screen bg-brand-800 flex items-center overflow-hidden">
+
+        {/* Hero background image */}
+        {settings?.heroImage?.asset && (
+          <Image
+            src={urlFor(settings.heroImage).width(1920).height(1080).fit('crop').url()}
+            alt=""
+            fill
+            priority
+            className="object-cover opacity-30"
+            sizes="100vw"
+          />
+        )}
 
         {/* Vertical decorative text — desktop only */}
         <div className="absolute right-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-4">
@@ -109,50 +122,62 @@ export default async function HomePage({ params: { locale } }: Props) {
       {/* ─── FEATURED PORTFOLIO ───────────────────────────── */}
       {featured.length > 0 && (
         <section className="py-24 px-6 md:px-14 max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-12">
-            <div className="flex items-center gap-4">
-              <div className="w-8 h-px bg-brand-100" />
-              <h2 className="text-[10px] tracking-[0.5em] text-brand-100 uppercase">
-                {t('home.portfolio_section')}
-              </h2>
-            </div>
-            <Link
-              href={`/${locale}/portfolio`}
-              className="text-[9px] tracking-[0.3em] text-brand-300 hover:text-brand-100
-                border-b border-brand-400 hover:border-brand-100 pb-0.5 uppercase transition-colors"
-            >
-              {t('home.portfolio_more')}
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-1.5 md:gap-2">
-            {featured.map((item: any) => (
-              <div key={item._id} className="aspect-square bg-brand-700 overflow-hidden relative group">
-                {item.image?.asset ? (
-                  <Image
-                    src={urlFor(item.image).width(600).height(600).fit('crop').url()}
-                    alt={item.title ?? item.category ?? ''}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <span className="text-brand-400 text-[9px] tracking-wider uppercase">
-                      {item.category}
-                    </span>
-                  </div>
-                )}
+          <RevealSection>
+            <div className="flex items-center justify-between mb-12">
+              <div className="flex items-center gap-4">
+                <div className="w-8 h-px bg-brand-100" />
+                <h2 className="text-[10px] tracking-[0.5em] text-brand-100 uppercase">
+                  {t('home.portfolio_section')}
+                </h2>
               </div>
-            ))}
-          </div>
+              <Link
+                href={`/${locale}/portfolio`}
+                className="text-[9px] tracking-[0.3em] text-brand-300 hover:text-brand-100
+                  border-b border-brand-400 hover:border-brand-100 pb-0.5 uppercase transition-colors"
+              >
+                {t('home.portfolio_more')}
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-1.5 md:gap-2">
+              {featured.map((item: any) => (
+                <div key={item._id} className="aspect-square bg-brand-700 overflow-hidden relative group cursor-pointer">
+                  {item.image?.asset ? (
+                    <>
+                      <Image
+                        src={urlFor(item.image).width(600).height(600).fit('crop').url()}
+                        alt={item.title ?? item.category ?? ''}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        sizes="(max-width: 768px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-brand-800/0 group-hover:bg-brand-800/50
+                        transition-all duration-500 flex items-end p-4">
+                        <span className="text-brand-50 text-[9px] tracking-[0.4em] uppercase
+                          translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100
+                          transition-all duration-300">
+                          {item.category}
+                        </span>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-brand-400 text-[9px] tracking-wider uppercase">
+                        {item.category}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </RevealSection>
         </section>
       )}
 
       {/* ─── SERVICES PREVIEW ─────────────────────────────── */}
       {services.length > 0 && (
         <section className="py-24 bg-brand-700 px-6 md:px-14">
-          <div className="max-w-4xl mx-auto">
+          <RevealSection className="max-w-4xl mx-auto">
             <div className="flex items-center gap-4 mb-12">
               <div className="w-8 h-px bg-brand-100" />
               <h2 className="text-[10px] tracking-[0.5em] text-brand-100 uppercase">
@@ -188,7 +213,7 @@ export default async function HomePage({ params: { locale } }: Props) {
                 {t('home.services_more')}
               </Link>
             </div>
-          </div>
+          </RevealSection>
         </section>
       )}
 

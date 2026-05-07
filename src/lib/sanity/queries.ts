@@ -52,6 +52,7 @@ export const artistQuery = groq`
 export const siteSettingsQuery = groq`
   *[_type == "siteSettings" && _id == "site-settings-singleton"][0] {
     "heroTagline": heroTagline[_key == $locale][0].value,
+    heroImage { asset->, hotspot, crop },
     instagramUrl,
     youtubeUrl,
     whatsappNumber,
